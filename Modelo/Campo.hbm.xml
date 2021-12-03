@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 nov. 2021 10:47:30 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Campo" table="campo" schema="public" optimistic-lock="version">
+        <id name="idcampo" type="int">
+            <column name="idcampo" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="estadocampo" class="Modelo.Estadocampo" fetch="select">
+            <column name="idestadocampo" not-null="true" />
+        </many-to-one>
+        <set name="lotes" table="lote" inverse="true" lazy="true" fetch="select" order-by="idlote">
+            <key>
+                <column name="idcampo" not-null="true" />
+            </key>
+            <one-to-many class="Modelo.Lote" />
+        </set>
+    </class>
+</hibernate-mapping>

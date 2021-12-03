@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 3 nov. 2021 10:47:30 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Modelo.Cultivoxlaboreo" table="cultivoxlaboreo" schema="public" optimistic-lock="version">
+        <id name="idcultivoxlaboreo" type="int">
+            <column name="idcultivoxlaboreo" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="cultivo" class="Modelo.Cultivo" fetch="select">
+            <column name="idcultivo" not-null="true" />
+        </many-to-one>
+        <many-to-one name="laboreo" class="Modelo.Laboreo" fetch="select">
+            <column name="idlaboreo" not-null="true" />
+        </many-to-one>
+        <property name="orden" type="int">
+            <column name="orden" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

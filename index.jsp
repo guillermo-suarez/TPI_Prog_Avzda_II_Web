@@ -1,11 +1,12 @@
-<%-- 
-    Document   : index
-    Created on : 3 dic. 2021, 18:23:24
-    Author     : Guillermo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.io.*, java.util.*, Modelo.*, Controlador.*, DAO.*" %>
 <!DOCTYPE html>
 <html>
-    <jsp:include page="MenuCampos.jsp"></jsp:include>
+    <%
+    DAOPostgres DAO = new DAOPostgres();
+    DAO.abrirSesion();
+    Controlador controlador = new Controlador(DAO);
+    request.getSession().setAttribute("controlador", controlador);
+    %>
+    <jsp:include page="MenuCampos.jsp"/>
 </html>

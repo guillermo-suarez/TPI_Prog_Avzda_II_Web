@@ -1,5 +1,5 @@
 # TPI Programación Avanzada II
-Grupo: Malazotto, Soledad; Suárez, Guillermo
+## **Grupo:** Malazotto, Soledad; Suárez, Guillermo
 
 En este repositorio se presenta:
 - Todo el código fuente (archivos .java, .jsp, .xml, etcétera)
